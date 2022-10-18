@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  
+  
+    <display-name>WebApplication</display-name> 
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+   <servlet>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>Servlets.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/StudentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/LogoutStudent</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/Semester</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ProfessorServlet</display-name>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <servlet-class>Servlets.ProfessorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <url-pattern>/ProfessorServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <url-pattern>/Course</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <url-pattern>/Successfully</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <url-pattern>/AssignGrade</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <url-pattern>/ProfessorHome</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <url-pattern>/ProfessorLogout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>Servlets.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Secretaries</servlet-name>
+    <servlet-class>Servlets.Secretary</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/SecretaryPage</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/Assign</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/Assigned</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/NewProfessor</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/NewStudent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/NewCourse</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/Home</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/CreateProfessor</url-pattern>
+  </servlet-mapping>
+   
+   <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/CreateStudent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Secretaries</servlet-name>
+    <url-pattern>/CreateCourse</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
