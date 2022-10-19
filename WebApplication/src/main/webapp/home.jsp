@@ -34,11 +34,12 @@
    	
 </nav>
 
-<div class="container" style="margin-top:60px;"> 
+<h1 style="text-align: center; color:white;">COURSES</h1>
+
+<div class="container" style="margin-top:10px;"> 
 	<div class="row"> 
 		<div class="col-md-13"> 
 			<div class="card"> 
-			
 				<table class="table table-bordered">
 					<thead>
 						<tr>
@@ -47,11 +48,10 @@
 							<th>Direction</th>
 							<th>Department</th>
 							<th>About</th>
+							<th>Books</th>
 							<th>Professor name</th>
 							<th>Professor surname</th>
 							<th>Actions</th>
-							
-							
 							
 						</tr>
 					</thead>
@@ -65,6 +65,7 @@
 								<td><c:out value="${course.direction}" /></td>
 								<td><c:out value="${course.department}" /></td>
 								<td><c:out value="${course.about}" /></td>
+								<td><c:out value="${course.books}"/></td>
 								<td><c:out value="${professors[i].name}" /></td>
 								<td><c:out value="${professors[i].surname}" /></td>
 								<td> 

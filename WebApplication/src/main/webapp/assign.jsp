@@ -34,7 +34,9 @@
    	
 </nav>
 
-<div class="container" style="margin-top:60px;"> 
+<h1 style="text-align: center; color:white;">PROFESSORS</h1>
+
+<div class="container" style="margin-top:10px;"> 
 	<div class="row"> 
 		<div class="col-md-13"> 
 			<div class="card"> 

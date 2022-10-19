@@ -11,7 +11,7 @@ public class CreateUsers {
 
 	private String jdbcURL="jdbc:mysql://localhost:3306/Webproject?useSSL=false";
 	private String jdbcUsername="INSERT YOUR USERNAME";//username of sql
-	private String jdbcPassword="INSERT YOUR DATABASE PASSWORD";//password 
+	private String jdbcPassword="INSERT YOUR PASSWORD";//password 
 	private String jdbcDriver="com.mysql.cj.jdbc.Driver";//Driver that is used (jdbc)
 	
 	public Connection getConnection() {

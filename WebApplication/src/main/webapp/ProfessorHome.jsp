@@ -23,7 +23,6 @@
 	%>
 
 
-
 <nav  style="background-color:#3d3d5c; padding: 10px;">
  	
    		<button class="btn btn-outline-success me-2">
@@ -53,7 +52,9 @@
    	
 </nav>
 
-<div class="container" style="margin-top:60px;"> 
+<h1 style="text-align: center; color:white;">STUDENTS</h1>
+
+<div class="container" style="margin-top:10px;"> 
 	<div class="row"> 
 		<div class="col-md-13"> 
 			<div class="card"> 

@@ -8,10 +8,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import Servlets.Secretary;
+
 public class UserController {
 	
 	
 	public CreateUsers cs= new CreateUsers();
+	
+	private static final String RETRIEVEUSER = "SELECT * FROM USERS WHERE username = ? ;";
+	
+	private static final String INSERTUSER="INSERT INTO users" + " (name,surname,username,department,capacity,password,salts) VALUES "
+			+ " (?, ?, ?, ? , ?, ?,?); ";
+	
+	private static final String GETUSER ="SELECT * FROM USERS WHERE username = ? ;";
 	
 	public int StudentId(int id) throws SQLException {
 		int Id = 0;
@@ -37,12 +46,37 @@ public class UserController {
 		return Id;
 	}
 	
+	public boolean InsertSecretary(String name , String surname, String username,String password,String department) throws SQLException, NoSuchAlgorithmException {
+		try(Connection connection = cs.getConnection(); //Make a connection with database
+				PreparedStatement preparedStatementtoInsertUsers = connection.prepareStatement(INSERTUSER);
+						PreparedStatement stmt = connection.prepareStatement(GETUSER)){
+			
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {return false;}
+			else {
+				preparedStatementtoInsertUsers.setString(1,name);
+				preparedStatementtoInsertUsers.setString(2,surname);
+				preparedStatementtoInsertUsers.setString(3,username);
+				preparedStatementtoInsertUsers.setString(4,department);
+				preparedStatementtoInsertUsers.setString(5,"Secretary");
+				String salt = Secretary.getSalt();
+				String hashed_password = Secretary.get_SHA_256_SecurePassword(password, salt);
+				preparedStatementtoInsertUsers.setString(6,hashed_password);
+				preparedStatementtoInsertUsers.setString(7,salt);
+				preparedStatementtoInsertUsers.executeUpdate();
+			}
+			return true;
+		}
+	}
+	
 	public Object findUser(String uname,String upass) throws SQLException, NoSuchAlgorithmException {
 		Users user= null;
-		try (Connection conn = cs.getConnection();){
+		try (Connection conn = cs.getConnection();
+				PreparedStatement finduser = conn.prepareStatement(RETRIEVEUSER);){
 			
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE username = '" + uname +"' ;");
+			finduser.setString(1, uname);
+			ResultSet rs = finduser.executeQuery();
 			
 			while (rs.next()) {
 				String name =rs.getString("name");
@@ -52,12 +86,13 @@ public class UserController {
 				String capacity=rs.getString("capacity");
 				String password=rs.getString("password");
 				String salts = rs.getString("salts");
-				
+				int userId=rs.getInt("usersCounter");
 				String hashedPassword=get_SHA_256_SecurePassword(upass,salts);
+				
 				if(!(hashedPassword.equals(password))) {
 					return user;
 				}
-				int userId=rs.getInt("usersCounter");
+				
 				
 				if(capacity.equals("Student")) {
 					int studentid=StudentId(userId);
@@ -66,7 +101,9 @@ public class UserController {
 					return student;
 				}
 				else if(capacity.equals("Professor")) {
+					
 					int professorId=ProfessorId(userId);
+					System.out.println("Pro");
 					Professors professor = new Professors(username, name, surname, department,capacity, password,
 							professorId,null, null);
 					return professor;
@@ -75,7 +112,6 @@ public class UserController {
 					Secretaries secretary = new Secretaries(username, name, surname, department,capacity, password);
 					return secretary;
 				}
-				
 			}
 		}
 		catch(SQLException e) {

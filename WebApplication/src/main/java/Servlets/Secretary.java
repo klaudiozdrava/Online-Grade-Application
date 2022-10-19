@@ -214,7 +214,7 @@ public class Secretary extends HttpServlet {
 
 	}
 	
-	private static String get_SHA_256_SecurePassword(String passwordToHash,
+	public static String get_SHA_256_SecurePassword(String passwordToHash,
             String salt) {
         String generatedPassword = null;
         try {
@@ -233,7 +233,7 @@ public class Secretary extends HttpServlet {
         return generatedPassword;
     }
 	
-	 private static String getSalt() throws NoSuchAlgorithmException {
+	 public static String getSalt() throws NoSuchAlgorithmException {
 	        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
 	        byte[] salt = new byte[16];
 	        sr.nextBytes(salt);

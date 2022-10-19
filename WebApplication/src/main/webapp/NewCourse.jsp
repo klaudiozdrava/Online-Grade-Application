@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Professor Registration</title>
+<title>New Course</title>
 <link rel="stylesheet" href="login.css" />
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -37,7 +37,7 @@
 		<div class="col-md-6"> 
 			<div class="card"> 
 			<form action="CreateCourse" name="myForm" onsubmit="return validateForm()" class="box" method="POST"> 
-				<h1>Register</h1> 
+				<h1>New Course</h1> 
 				<input type="text" name="id"  placeholder="Id" maxlength="5" size="5" minlength="5" required>
 				<input type="text" name="name" placeholder="Name" required> 
 				<input type="text" id="project" name="project_factor" placeholder="Project Factor" oninput="validateNumber(this);" required> 

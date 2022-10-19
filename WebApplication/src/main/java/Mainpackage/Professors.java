@@ -31,13 +31,9 @@ public class Professors extends Users {
 	}
 	
 	
-	
-	
 	 public int getId() {
 		return id;
 	}
-
-
 
 
 	 public String getAbout() {
@@ -58,16 +54,7 @@ public class Professors extends Users {
 	public void setAchievements(String achievements) {
 		this.achievements = achievements;
 	}
-
-
-	//Βλέπει τις βαθμολογίες των όλων των φοιτητών αλλά μόνο για τα μαθήματά του.
-	public void displayAllGrades() {
-		 System.out.println("Below are all students grades from professor "+super.getName()+" "+super.getSurname());
-	}
-	//Θέτει βαθμολογία στις λίστες που του αντιστοιχούν
-	 public void PassGradesToStudents() {
-		 System.out.println("Grade to student X registered succesfully");
-	}
+	
 
 	@Override
 	public String toString() {
